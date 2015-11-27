@@ -1,5 +1,8 @@
 Simple backend for chromecast torrent player.
 
+
+[Frontend](https://github.com/bmartynov/gochromecast_frontend)
+
 **Add download**
 ----
 * **URL**
@@ -131,4 +134,30 @@ Simple backend for chromecast torrent player.
 
   * **Code:** 200 <br />
     **Content:** `{"method":"DownloadInfoAll","message":{"code":2,"message":"requested download not found (%s)"},"status":1}`
+
+**Play**
+----
+* **URL**
+  /download/play
+
+* **Method:**
+    GET
+  
+*  **URL Params**
+
+   **Required:**
+   
+   `id=[string]`
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** `<content>`
+
+* **Error Response:**
+
+  * **Code:** 200 <br />
+    **Content:** `{"method":"DownloadPlay","message":{"code":2,"message":"requested download not found (%s)"},"status":1}`
     
+  * **Code:** 200 <br />
+    **Content:** `{"method":"DownloadPlay","message":{"code":3,"message":"file not found (%s)"},"status":1}`
