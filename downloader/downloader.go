@@ -11,7 +11,6 @@ import (
 	"github.com/bmartynov/gochromecast/errors"
 	"github.com/bmartynov/gochromecast/responses"
 	"github.com/bmartynov/gochromecast/utils"
-	"fmt"
 )
 
 const (
@@ -130,7 +129,6 @@ func (this *Downloader) torrentAddFromUrl(url string) (t torrent.Torrent, err er
 }
 
 func (this *Downloader) Start() {
-	fmt.Println("this.Torrent", fmt.Sprintf("%+v", this.Torrent))
 	go func() {
 		<-this.Torrent.GotInfo()
 

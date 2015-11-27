@@ -5,7 +5,6 @@ import (
 	"github.com/bmartynov/gochromecast/utils"
 	"github.com/bmartynov/gochromecast/errors"
 	"github.com/bmartynov/gochromecast/downloader"
-	"fmt"
 )
 
 var (
@@ -61,8 +60,6 @@ func (this *DownloaderFactory) Start(downloader_id string) error {
 	this.Lock()
 	this.Unlock()
 	downloader, err := this.Get(downloader_id)
-
-	fmt.Println(fmt.Sprintf("%+v", downloader), err)
 
 	if err != nil { return err }
 
